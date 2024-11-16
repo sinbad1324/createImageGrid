@@ -1,0 +1,178 @@
+@use "mixins";
+$height-head: 30px;
+$height-footer: 50px;
+$widthRecherche: 150px;
+
+.logo {
+    margin-top: 5px;
+    width: 50px;
+    height: auto;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.head {
+
+    width: 100%;
+    height: $height-head;
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    li::marker {
+        content: "|";
+    }
+
+    li:first-child::marker {
+        content: "";
+        list-style-type: none;
+    }
+
+    li {
+        padding-left: 10px;
+    }
+
+    a {
+        text-decoration: none;
+        font-size: 13px;
+    }
+
+    ul {
+        height: $height-head;
+        float: right;
+        position: absolute;
+        right: 0;
+        margin-right: 20px;
+    }
+
+    .logo {
+        margin-left: 50px;
+        @include mixins.minmaxLogo(20px, 2.5vw, 30px);
+    }
+}
+
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    list-style-type: none;
+    height: 100%;
+
+}
+
+nav {
+    $width-logo: 40px;
+    $width-logos: calc(10% + $widthRecherche);
+
+    width: 100%;
+    height: calc((var(--height_header) - $height-head) - $height-footer);
+    display: flex;
+
+    .links {
+        width: calc((100% - $width-logos) - $width-logo);
+
+        a {
+            font-size: clamp(.3rem, 1.6vw, 1rem);
+            font-weight: 600;
+            text-decoration: none;
+        }
+    }
+
+    .logos {
+        width: $width-logos ;
+        height: 100%;
+        margin-right: 10px;
+
+        ul {
+            width: 100%;
+            height: 100%;
+
+            li>img {
+                @include mixins.minmaxLogo(10px, 2.5vw, 30px);
+            }
+        }
+    }
+
+
+    .logo {
+        margin-left: 20px;
+        width: 100px;
+        height: 100px;
+    }
+}
+
+.footer {
+    height: $height-footer;
+    width: 100%;
+    @include mixins.flex_center();
+
+    div {
+        font-size: clamp(.5rem, 2.5vw, 13px);
+
+        h1 {
+
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        height: 100%;
+        width: fit-content;
+        @include mixins.flex_center_Colums();
+
+        a {
+            cursor: pointer;
+            font-size: 20px;
+
+        }
+    }
+}
+
+
+
+.Rechercher {
+
+    --imgSize: 20px;
+    width: $widthRecherche;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 50px;
+    flex-grow: 100%;
+    gap: 10px;
+
+    input {
+        width: calc(100% - var(--imgSize));
+        border: none;
+        border-radius: 50px;
+        height: 100%;
+        text-align: left;
+        word-wrap: break-word;
+        font-size: clamp(.3rem, 1.6vw, 1rem);
+
+        &:focus {
+            outline: none;
+            border: none;
+        }
+    }
+
+
+
+    img {
+
+        width: var(--imgSize);
+        height: var(--imgSize);
+    }
+}

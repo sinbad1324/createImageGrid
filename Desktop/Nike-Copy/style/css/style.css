@@ -1,0 +1,391 @@
+.logo {
+  margin-top: 5px;
+  width: 50px;
+  height: auto;
+}
+.logo img {
+  width: 100%;
+  height: 100%;
+}
+.logo:hover {
+  cursor: pointer;
+}
+
+.head {
+  width: 100%;
+  height: 30px;
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.head li::marker {
+  content: "|";
+}
+.head li:first-child::marker {
+  content: "";
+  list-style-type: none;
+}
+.head li {
+  padding-left: 10px;
+}
+.head a {
+  text-decoration: none;
+  font-size: 13px;
+}
+.head ul {
+  height: 30px;
+  float: right;
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+}
+.head .logo {
+  margin-left: 50px;
+}
+.head .logo {
+  min-width: 20px;
+  width: 2.5vw;
+  max-width: 30px;
+  height: auto;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  list-style-type: none;
+  height: 100%;
+}
+
+nav {
+  width: 100%;
+  height: calc(var(--height_header) - 30px - 50px);
+  display: flex;
+}
+nav .links {
+  width: calc(100% - (10% + 150px) - 40px);
+}
+nav .links a {
+  font-size: clamp(0.3rem, 1.6vw, 1rem);
+  font-weight: 600;
+  text-decoration: none;
+}
+nav .logos {
+  width: calc(10% + 150px);
+  height: 100%;
+  margin-right: 10px;
+}
+nav .logos ul {
+  width: 100%;
+  height: 100%;
+}
+nav .logos ul li > img {
+  min-width: 10px;
+  width: 2.5vw;
+  max-width: 30px;
+  height: auto;
+}
+nav .logo {
+  margin-left: 20px;
+  width: 100px;
+  height: 100px;
+}
+
+.footer {
+  height: 50px;
+  width: 100%;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer div {
+  font-size: clamp(0.5rem, 2.5vw, 13px);
+  height: 100%;
+  width: fit-content;
+}
+.footer div h1 {
+  font-weight: normal;
+  cursor: pointer;
+}
+.footer div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footer div a {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.Rechercher {
+  --imgSize: 20px;
+  width: 150px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 50px;
+  flex-grow: 100%;
+  gap: 10px;
+}
+.Rechercher input {
+  width: calc(100% - var(--imgSize));
+  border: none;
+  border-radius: 50px;
+  height: 100%;
+  text-align: left;
+  word-wrap: break-word;
+  font-size: clamp(0.3rem, 1.6vw, 1rem);
+}
+.Rechercher input:focus {
+  outline: none;
+  border: none;
+}
+.Rechercher img {
+  width: var(--imgSize);
+  height: var(--imgSize);
+}
+
+:root {
+  --height_header: 150px;
+  --height_main_min: 100vh;
+  --height_footer: 200px;
+}
+
+body {
+  display: grid;
+  grid-template-rows: var(--height_header) minmax(var(--height_main_min), auto) var(--height_footer);
+  grid-template-columns: 100%;
+}
+
+header,
+main,
+footer {
+  grid-column: 1/2;
+}
+
+header {
+  grid-row: 1/2;
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  grid-row: 2/3;
+  width: 100%;
+  height: 100%;
+}
+
+footer {
+  grid-row: 3/4;
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+
+.main_head {
+  width: 100%;
+  height: auto;
+  padding-top: 5px;
+}
+.main_head figure {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.main_head figure > div {
+  padding-top: 20px;
+  width: 100%;
+  height: 100%;
+}
+.main_head figure > div img {
+  width: 100%;
+  height: 100%;
+}
+.main_head figure figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+}
+.main_head figure figcaption {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main_head figure figcaption .Conaier {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: safe;
+  justify-content: end;
+}
+.main_head figure figcaption .Conaier .textContainer {
+  width: 100%;
+  height: fit-content;
+}
+.main_head figure figcaption .Conaier .textContainer h2,
+.main_head figure figcaption .Conaier .textContainer p {
+  color: white;
+}
+.main_head figure figcaption .Conaier .textContainer h2 {
+  font-weight: 900;
+  font-size: clamp(1rem, 2.5vw, 2.5rem);
+}
+.main_head figure figcaption .Conaier .textContainer p {
+  font-weight: 0;
+  font-size: clamp(0.7rem, 2.5vw, 1.2rem);
+}
+.main_head figure figcaption .Conaier .btn {
+  margin-top: 50px;
+  width: 100%;
+  height: 50px;
+}
+.main_head figure figcaption .Conaier .btn a {
+  background-color: white;
+  width: 150px;
+  height: 10px;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 50px;
+}
+
+.Container {
+  margin-top: 20px;
+  padding: 20px;
+  padding-left: 50px;
+  padding-right: 0px;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-around;
+  gap: 50px;
+}
+.Container article {
+  height: fit-content;
+  width: 100%;
+}
+.Container article ul {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  list-style-type: none;
+  gap: 20px;
+}
+.Container article ul li {
+  position: relative;
+  min-width: 500px;
+  height: fit-content;
+  cursor: pointer;
+}
+.Container article ul li figure {
+  position: relative;
+  width: 100%;
+  height: fit-content;
+}
+.Container article ul li figure .img {
+  width: 100%;
+  height: fit-content;
+}
+.Container article ul li figure .img img {
+  width: 100%;
+  height: auto;
+}
+
+.basique figure figcaption {
+  margin-top: 10px;
+  width: 100%;
+  height: 50px;
+  font-weight: 600;
+  font-size: clamp(0.7rem, 2.5vw, 1.5rem);
+}
+
+.Achat figure {
+  position: relative;
+}
+.Achat figure figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: aqua;
+  width: 100%;
+  height: 50px;
+  font-weight: 600;
+  font-size: clamp(0.7rem, 2.5vw, 1.5rem);
+}
+
+.params {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.title {
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.btns {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+.btns button {
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  padding: 10px;
+  transition: background 0.5s;
+}
+.btns button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btns button img {
+  width: 100%;
+  height: auto;
+}
+.btns button:hover {
+  background-color: rgb(207, 207, 207);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+}
+
+/*# sourceMappingURL=style.css.map */
